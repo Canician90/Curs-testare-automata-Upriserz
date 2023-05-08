@@ -10,6 +10,7 @@ def step_impl(context, user, pswd):
     login_page.fill_pass_input('itfactory.ro')
     login_page.fill_pass_input('Test123!')
     login_page.click_login_button()
+    login_page.back()
 
 
 

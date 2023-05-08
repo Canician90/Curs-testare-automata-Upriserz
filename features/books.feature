@@ -7,11 +7,11 @@ Feature: Books capability
     When books: I click login button
     When login: I login with user "itfactory.ro" and "Test123!"
 
-  @books
+  @regression
     Scenario: I validate the stock count
     Then books: I validate that 8 books are displayed
 
-  @books
+  @regression
 
 
   Scenario Outline:I validate the search is working
@@ -26,7 +26,7 @@ Feature: Books capability
     |Richard|
 
 
-     @test
+     @regression
     Scenario: I validate that clear search is working
        When I search after "test"
        When  books: I clear  search input

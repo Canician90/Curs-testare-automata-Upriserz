@@ -1,5 +1,6 @@
 from pages.home_page import  HomePage
 from behave import *
+from time import sleep
 
 
 books_page = BooksPage()
@@ -7,11 +8,20 @@ books_page = BooksPage()
 
 @when ('books: I click login button')
 def step_impl(context):
+    sleep(5)
     home_page.click_login_button()
 
     @when('books: I search after "{query}"')
     def step_impl(context, query):
         home_page.fill_search_input(query)
+
+        @when( 'books: I add  to collection the book with title "{title}"' )
+        def step_impl(context, title):
+            books_page.click_book_by_title(title).
+            books_page.click_add_to_your_collection_button()
+            books_page.browser_back()
+
+
 
         @when('books: I clear search input')
         def step_impl(context):

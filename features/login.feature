@@ -19,7 +19,7 @@ Feature: Login capability
     |itfactory.mo|Test12343|
 
 
-  @smoke
+  @regression
   Scenario: I login with valid credentials
 
     When login: I login with user "itfactory.ro" and "Test123!"
