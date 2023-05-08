@@ -24,7 +24,9 @@ home_page = HomePage()
 
 @given ('home: I am a user  on home page')
 def step_impl(context):
+    home_page.delete_all_cookies()
     home_page.navigate_to_home_page()
+
 
 
 @when ('home: I click bookstore application card')

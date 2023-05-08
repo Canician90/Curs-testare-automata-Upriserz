@@ -1,5 +1,6 @@
 from selenium.webdriver.common.by import By
 from pages.base_page import BasePage
+from time import sleep
 
 
 
@@ -9,7 +10,7 @@ class LoginPage(BasePage):
         USER_INPUT = '//input[@id="username"]'
         PASS_INPUT = '//input[@id="password"]'
         LOGIN_BUTTON ='//button[@id="login"]'
-
+        INVALID_CREDENTIALS_ERROR = '//P[@ID="NAME"]'
 
 
 
@@ -26,3 +27,11 @@ class LoginPage(BasePage):
             def click_login_button(self):
             self.wait_for_elem(self.LOGIN_BUTTON)
             self.driver.find_element(By.XPATH.self.LOGIN_BUTTON).click()
+
+
+            def validate_invalid_credentials_error(self):
+            self.wait_for_elem(self.INVALID_CREDENTIALS_ERROR)
+            expected = 'Invalid username or password'
+            actual = self.driver.find_element(By.XPATH, self.INVALID_CREDENTIALS_ERROR).text
+            self.assertEqual(expected, actual, 'Error message')
+

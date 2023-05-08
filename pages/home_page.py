@@ -15,4 +15,6 @@ class HomePage(BasePage):
 
             def click_book_store_application_card(self):
             self.wait_for_elem(self.BOOK_STORE_APPLICATION_CARD)
-            self.driver.find_element(By.XPATH. self.BOOK_STORE_APPLICATION_CARD).click()
+            element = self.driver.find_element(By.XPATH, self.BOOK_STORE_APPLICATION_CARD)
+            self.driver.execute_script("arguments[0].click()", element)
+
