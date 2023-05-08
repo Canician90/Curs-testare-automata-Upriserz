@@ -17,7 +17,7 @@ def step_impl(context):
 
         @when( 'books: I add  to collection the book with title "{title}"' )
         def step_impl(context, title):
-            books_page.click_book_by_title(title).
+            books_page.click_book_by_title(title)
             books_page.click_add_to_your_collection_button()
             books_page.browser_back()
 
