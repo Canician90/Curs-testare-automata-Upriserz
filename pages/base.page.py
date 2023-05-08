@@ -19,3 +19,9 @@ class BasePage (Browser, unittest.TestCase):
             sleep(2)
             self.driver.switch_to.alert.accept()
 
+            def refresh_page(self):
+                sleep( 2 )
+                self.driver.refresh()
+
+
+
