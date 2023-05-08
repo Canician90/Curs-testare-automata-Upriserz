@@ -18,3 +18,8 @@ class BooksPage(BasePage):
 
 
         #validations
+
+        def validate_correct_url(self):
+            expected = 'https://demoqa.com/books'
+            actual = self.driver.current_url
+            self.assertEqual(expected, actual, 'Url is incorrect')
